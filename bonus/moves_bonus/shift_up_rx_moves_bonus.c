@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   shift_up_rx_moves.c                                :+:      :+:    :+:   */
+/*   shift_up_rx_moves_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atchioue <atchioue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 16:57:27 by atchioue          #+#    #+#             */
-/*   Updated: 2025/12/21 21:53:08 by atchioue         ###   ########.fr       */
+/*   Updated: 2025/12/22 22:05:15 by atchioue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../cheker_bonus.h"
 
 void	ra_move(t_list **stacka)
 {
@@ -44,8 +44,8 @@ void	rb_move(t_list **stackb)
 	*stackb = second;
 }
 
-void	rr_move(t_list **stacka, t_list **stackb)
+void	rr_bonus(t_list **stack_a, t_list **stack_b)
 {
-	ra_move(stacka);
-	rb_move(stackb);
+	ra_move(stack_a);
+	rb_move(stack_b);
 }

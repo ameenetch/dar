@@ -6,7 +6,7 @@
 /*   By: atchioue <atchioue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 16:57:27 by atchioue          #+#    #+#             */
-/*   Updated: 2025/12/21 21:38:45 by atchioue         ###   ########.fr       */
+/*   Updated: 2025/12/22 21:04:56 by atchioue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ra_move(t_list **stacka)
 	first->next = NULL;
 	last->next = first;
 	*stacka = second;
-	write(0, "ra\n", 3);
+	write(1, "ra\n", 3);
 }
 
 void	rb_move(t_list **stackb)
@@ -43,12 +43,12 @@ void	rb_move(t_list **stackb)
 	first->next = NULL;
 	last->next = first;
 	*stackb = second;
-	write(0, "rb\n", 3);
+	write(1, "rb\n", 3);
 }
 
 void	rr_move(t_list **stacka, t_list **stackb)
 {
 	ra_move(stacka);
 	rb_move(stackb);
-	write(0, "rr\n", 3);
+	write(1, "rr\n", 3);
 }

@@ -31,14 +31,14 @@ void	adapte_five(int pos, t_list **head)
 		rra_move(head);
 }
 
-void	sorting_five(t_list **stackA, t_list **stackB)
+void	sorting_five(t_list **stacka, t_list **stackb)
 {
 	t_list	*current ;
 	int		pos ;
 
-	indexing(stackA);
+	indexing(stacka);
 	pos = 0 ;
-	current = *stackA;
+	current = *stacka;
 	while (current)
 	{
 		if (current->index == 0)
@@ -46,8 +46,8 @@ void	sorting_five(t_list **stackA, t_list **stackB)
 		pos++;
 		current = current->next;
 	}
-	adapte_five(pos, stackA);
-	pb_move(stackB, stackA);
-	sorting_foor(stackA, stackB);
-	pa_move(stackA, stackB);
+	adapte_five(pos, stacka);
+	pb_move(stacka, stackb);
+	sorting_foor(stacka, stackb);
+	pa_move(stacka, stackb);
 }

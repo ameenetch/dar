@@ -25,14 +25,14 @@ void	adapte_stack(int pos, t_list **head)
 		rra_move(head);
 }
 
-void	sorting_foor(t_list **stackA, t_list **stackB)
+void	sorting_foor(t_list **stacka, t_list **stackb)
 {
 	t_list	*current ;
 	int		pos ;
 
-	indexing(stackA);
+	indexing(stacka);
 	pos = 0;
-	current = *stackA ;
+	current = *stacka ;
 	while (current)
 	{
 		if (current->index == 0)
@@ -40,8 +40,8 @@ void	sorting_foor(t_list **stackA, t_list **stackB)
 		pos++;
 		current = current->next;
 	}
-	adapte_stack(pos, stackA);
-	pb_move(stackB, stackA);
-	sorting_three(stackA);
-	pa_move(stackA, stackB);
+	adapte_stack(pos, stacka);
+	pb_move(stacka, stackb);
+	sorting_three(stacka);
+	pa_move(stacka, stackb);
 }

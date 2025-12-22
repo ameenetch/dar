@@ -6,7 +6,7 @@
 /*   By: atchioue <atchioue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 16:57:23 by atchioue          #+#    #+#             */
-/*   Updated: 2025/12/21 21:38:22 by atchioue         ###   ########.fr       */
+/*   Updated: 2025/12/22 21:05:22 by atchioue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	pa_move(t_list **stack_a, t_list **stack_b)
 	(tmp_b)->next = NULL;
 	(tmp_b)->next = (*stack_a);
 	(*stack_a) = tmp_b;
-	write (0, "pa\n", 3);
+	write (1, "pa\n", 3);
 }
 
 void	pb_move(t_list **stack_a, t_list **stack_b)
@@ -37,5 +37,5 @@ void	pb_move(t_list **stack_a, t_list **stack_b)
 	first_at_a->next = NULL;
 	first_at_a->next = (*stack_b);
 	(*stack_b) = first_at_a ;
-	write (0, "pb\n", 3);
+	write (1, "pb\n", 3);
 }

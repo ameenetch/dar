@@ -6,11 +6,12 @@
 /*   By: atchioue <atchioue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:07:54 by atchioue          #+#    #+#             */
-/*   Updated: 2025/12/21 00:10:46 by atchioue         ###   ########.fr       */
+/*   Updated: 2025/12/23 00:15:45 by atchioue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include<stdio.h>
 
 // void	display(t_list *head)
 // {
@@ -99,6 +100,8 @@ int	main(int ac, char **av)
 		cheek_double(&stacka);
 		cheek_already_sorted(&stacka);
 		sort(&stacka, &stackb);
+		lst_clear(&stacka);
+		lst_clear(&stackb);
 	}
 	return (0);
 }
