@@ -29,15 +29,13 @@ void	free_memory(char **split)
 
 int	cheek_integer_forme(char *str)
 {
-	int	nbr ;
-
-	nbr = ft_atoi(str);
+	ft_atoi(str);
 	return (0);
 }
 
 int	sps(char c)
 {
-	return (9 <= c && c <= 13 || c == 32);
+	return ((9 <= c && c <= 13)|| (c == 32));
 }
 
 void	cheek_already_sorted(t_list **head)

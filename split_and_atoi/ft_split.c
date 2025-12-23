@@ -74,7 +74,7 @@ int	allocat_and_full(char **rslt, char *str)
 	return (1);
 }
 
-char	**process(char *str, char **rslt, int words)
+char	**process(char *str, char **rslt)
 {
 	rslt = malloc(sizeof(char *) * 2);
 	if (!rslt)
@@ -95,11 +95,12 @@ char	**ft_split(char *str)
 	char	**rslt ;
 	int		words ;
 
+	rslt = NULL;
 	if (!str)
 		return (NULL);
 	words = counte_words(str) + 1;
 	if (words == 1)
-		return (process(str, rslt, words));
+		return (process(str, rslt));
 	rslt = malloc(sizeof(char *) * words);
 	if (!rslt)
 		return (NULL);

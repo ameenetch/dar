@@ -86,10 +86,8 @@ void	cheek_string_arg(char *str)
 {
 	int		i;
 	char	**splits;
-	int		j;
 
 	i = 0;
-	j = 0;
 	splits = ft_split(str);
 	if (!splits)
 		ft_error();

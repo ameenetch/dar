@@ -29,11 +29,9 @@ static	t_list	*make_stack(char *str, t_list **head)
 {
 	char	**splits;
 	int		i;
-	int		j;
 	int		nbr;
 
 	i = 0;
-	j = 0;
 	splits = ft_split(str);
 	if (!splits)
 	{

@@ -40,11 +40,9 @@ int	space_string(char *str)
 int	double_signed(char *str)
 {
 	int	i ;
-	int	cnt ;
 	int	flag ;
 
 	i = 0 ;
-	cnt = 0 ;
 	flag = 1 ;
 	while (str[i])
 	{
