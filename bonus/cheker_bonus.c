@@ -6,7 +6,7 @@
 /*   By: atchioue <atchioue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 21:01:44 by atchioue          #+#    #+#             */
-/*   Updated: 2025/12/23 00:11:01 by atchioue         ###   ########.fr       */
+/*   Updated: 2025/12/23 17:53:55 by atchioue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,12 @@ static	t_list	*make_stack(char *str, t_list **head)
 
 static	void	do_moves_bonus(char *str, t_list **stack_a, t_list **stack_b)
 {
-	if (!str)
-		return ;
 	if (!ft_strcmp(str, "sa\n"))
 		sa_move(stack_a);
 	else if (!ft_strcmp(str, "sb\n"))
 		sb_move(stack_b);
 	else if (!ft_strcmp(str, "ss\n"))
-		ss_move(stack_a,stack_b);
+		ss_move(stack_a, stack_b);
 	else if (!ft_strcmp(str, "ra\n"))
 		ra_move(stack_a);
 	else if (!ft_strcmp(str, "rb\n"))
@@ -78,38 +76,28 @@ static	void	do_moves_bonus(char *str, t_list **stack_a, t_list **stack_b)
 		ft_error();
 }
 
-static	int	cheek_if_sorted(t_list **head)
+static	void	doing_moves(t_list **stacka, t_list **stack_b)
 {
-	t_list	*current;
-	t_list	*nextnode;
-	int		flag;
+	char	*str;
 
-	flag = 0;
-	current = *head;
-	nextnode = current->next;
-	while (current)
+	str = get_next_line(0);
+	while (str)
 	{
-		nextnode = current->next;
-		if (nextnode && current->nbr > nextnode->nbr)
-		{
-			flag = 1;
-			break ;
-		}
-		current = nextnode;
+		do_moves_bonus(str, stacka, stack_b);
+		free(str);
+		str = get_next_line(0);
 	}
-	if (flag)
-		return (0);
-	return (1);
+	free(str);
 }
 
 int	main(int ac, char **av)
 {
 	int		i;
-	char	*str ;
 	t_list	*stacka ;
 	t_list	*stack_b;
 
 	stack_b = NULL;
+	stacka = NULL;
 	i = 1;
 	if (ac >= 2)
 	{
@@ -121,16 +109,12 @@ int	main(int ac, char **av)
 		}
 		cheek_double(&stacka);
 		cheek_already_sorted(&stacka);
-		str = get_next_line(0);
-		while (str)
-		{
-			do_moves_bonus(str, &stacka, &stack_b);
-			free(str);
-			str = get_next_line(0);
-		}
+		doing_moves(&stacka, &stack_b);
 		if ((cheek_if_sorted(&stacka)) && (stack_b == NULL))
 			write(1, "OK\n", 3);
 		else
 			write(1, "KO\n", 3);
+		lst_clear(&stacka);
+		lst_clear(&stack_b);
 	}
 }

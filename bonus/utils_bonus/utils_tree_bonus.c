@@ -6,7 +6,7 @@
 /*   By: atchioue <atchioue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 22:12:04 by atchioue          #+#    #+#             */
-/*   Updated: 2025/12/22 23:56:07 by atchioue         ###   ########.fr       */
+/*   Updated: 2025/12/23 17:46:53 by atchioue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	cheek_integer_forme(char *str)
 
 int	sps(char c)
 {
-	return ((9 <= c && c <= 13)|| (c == 32));
+	return ((9 <= c && c <= 13) || (c == 32));
 }
 
 void	cheek_already_sorted(t_list **head)
@@ -61,4 +61,28 @@ void	cheek_already_sorted(t_list **head)
 		return ;
 	lst_clear(head);
 	exit(0);
+}
+
+int	cheek_if_sorted(t_list **head)
+{
+	t_list	*current;
+	t_list	*nextnode;
+	int		flag;
+
+	flag = 0;
+	current = *head;
+	nextnode = current->next;
+	while (current)
+	{
+		nextnode = current->next;
+		if (nextnode && current->nbr > nextnode->nbr)
+		{
+			flag = 1;
+			break ;
+		}
+		current = nextnode;
+	}
+	if (flag)
+		return (0);
+	return (1);
 }

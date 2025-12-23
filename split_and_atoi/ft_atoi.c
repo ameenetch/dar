@@ -24,7 +24,7 @@ int	ft_strlen(char *str)
 
 void	ft_error(void)
 {
-	write(2, "error\n", 6);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
